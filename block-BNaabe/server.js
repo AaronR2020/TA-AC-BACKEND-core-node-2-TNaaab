@@ -28,3 +28,13 @@ if(req.method=='POST'&&req.url=='./'){
 }
 }
 
+//req.headers['content-type']   based on this we know what type of data is recieved
+//use if ==='application/x-www-form-urlencoded'> Q=url.parse(STORE).QUERY;NAME=Q.KEY1
+//else res.end(store)
+
+if(req.header['content-type']=='application/json'){
+    dataJson=JSON.parse(store);
+    res.writeHeader(200,'Content-Type:text/html')
+    res.end(`email:${dataJson.email}`)
+}
+//for form data use url.parse(req.url).querystring.name
