@@ -44,6 +44,10 @@ handle an error condition as well where requested url is other than above routes
 
 Whenever a `POST` request comes on `/users` with user data from postman
 
+
+.
+
+
 - capture data on server side
 - create a file inside data directory using the username from captured data using `fs.open` with `wx` flag.
 - check what `wx` flag does ?
@@ -52,6 +56,10 @@ Whenever a `POST` request comes on `/users` with user data from postman
 - send response saying user created
 
 Entire code should look like:
+
+
+.
+
 
 ```js
 // define a users directory at top where all users will be stored
@@ -67,6 +75,11 @@ if (req.url === "/users" && req.method === "POST") {
   // grab the username from store data
   var username = JSON.parse(store).username;
   // check whether this username exists in users directory or not
+
+
+
+.
+
 
   // We have to create a file using username + append .json to create a proper file
 
