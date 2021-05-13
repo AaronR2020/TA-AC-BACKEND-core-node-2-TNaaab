@@ -11,10 +11,19 @@ You are currently inside server.js
 
 Write code to 
 - capture absolute path of `server.js`(itself)
+serverPath=path.join(__dirname,'server.js');
+console.log(serverPath);
+
 - get absolute path of `app.js`
+appPath=path.join(__dirname,'app.js');
+console.log(appPath);
+
 - get realtive path of `index.html`
+console.log(__dirname)
 - get absolute path of `index.html` using `path module` 
- 
+path=require('path')
+pathI=path.join(__dirname,"")
+ console.log(pathI)
 #### Capture data on server
 
 Q. Create a server using http
@@ -22,6 +31,22 @@ Q. Create a server using http
 - send json data on it from postman
 
 ```js
+http=require('http')
+url=require('url')
+server=http.createServer(handleRequest)
+server.listen(8080);
+function handleRequest(req,res){
+  q=url.parse(res.url,true)
+  if(url.method=='POST'&&q=='/'){
+    a={
+  team: 'kxip',
+  players: 18,
+  captain: 'KL Rahul'
+}
+    res.writeHeader(200,'Content-Type':'text/json')
+    res.write(a.toString())
+  }
+}
 // data format is
 {
   team: 'kxip',
