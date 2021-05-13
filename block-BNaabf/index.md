@@ -25,12 +25,16 @@ Project folder
   - server.js
   - form.html(html form)
 
+
+
 form.html is a basic html form with multiple inputs. Each input except input of `type=submit` must contain `name` attribute which is the key for value submitted on that specific input.
 - name
 - email
 - age
 
 lastly also add an `input type=submit` to submit the form
+
+
 
 Write code inside `server.js` to
 - create a basic server
@@ -40,9 +44,13 @@ Write code inside `server.js` to
 - make sure to add `method` and `action` attribute to `HTML form` in form.html
 - send captured data in response as html page 
 
+
+
 You have to basically handle 2 routes
 1. to display the form data -> GET on `/form` route
 2. to capture data from form and display it -> POST on `/form` route
+
+
 
 ##### Note:-
 - action attribute determines the route which will be requested on server side
