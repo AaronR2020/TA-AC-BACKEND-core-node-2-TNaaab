@@ -38,10 +38,6 @@ server.listen(8080);
 function handleRequest(req,res){
   q=url.parse(res.url,true)
   if(url.method=='POST'&&q=='/'){
-    a={
-  team: 'kxip',
-  players: 18,
-  captain: 'KL Rahul'
 }
     res.writeHeader(200,'Content-Type':'text/json')
     res.write(a.toString())
